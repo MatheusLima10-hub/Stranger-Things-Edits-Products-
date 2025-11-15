@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stranger Things Edits Products</title>
+  <meta name="description" content="Stranger Things Edits Products — encontre produtos afiliados inspirados no universo de Hawkins e do Mundo Invertido.">
+  <meta name="theme-color" content="#0b0b0f">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0f;--bg-2:#121217;--txt:#e8e8e8;--muted:#b7b7b7;
+      --accent:#e50914;--accent-2:#ff3357;--card:#161620;--border:#262636;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);font-family:Montserrat, sans-serif;line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;height:auto;display:block}
+
+    .wrap{max-width:1200px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;background:var(--bg-2);border-bottom:1px solid var(--border);z-index:10}
+    .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .title{font-family:"VT323", monospace;font-size:28px;color:var(--accent)}
+
+    .hero{padding:24px;text-align:center}
+    .hero h1{font-family:"VT323", monospace;font-size:2.5rem;color:#fff;margin-bottom:8px}
+    .hero p{font-size:1rem;color:var(--muted)}
+
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;justify-content:center}
+    .chip{padding:6px 12px;border-radius:999px;border:1px solid var(--border);cursor:pointer;font-size:0.9rem}
+    .chip.active{background:rgba(229,9,20,0.1);color:#fff;border-color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+    .card .body{padding:14px;flex:1}
+    .card h3{margin:0 0 6px;font-size:1.2rem}
+    .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(229,9,20,0.12);color:#fff;border:1px solid var(--accent);font-size:0.75rem}
+    .price{font-weight:700;color:#fff;margin-top:8px;font-size:1rem}
+    .cta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .btn{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--txt);cursor:pointer;font-size:0.9rem}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none}
+
+    .thumb{background:#0f0f18}
+    .thumb img{width:100%;height:auto;object-fit:cover}
+
+    footer{margin:24px 0;padding:18px;border-top:1px solid var(--border);color:var(--muted);text-align:center;font-size:0.85rem}
+
+    /* Responsividade */
+    @media (max-width:768px){
+      .hero h1{font-size:2rem}
+      .nav{flex-direction:column;gap:8px}
+      .title{font-size:24px;text-align:center}
+    }
+    @media (max-width:480px){
+      .hero h1{font-size:1.6rem}
+      .hero p{font-size:0.9rem}
+      .card h3{font-size:1rem}
+      .price{font-size:0.9rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="title">Stranger Things Edits Products</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Explore os melhores produtos Stranger Things</h1>
+      <p>Seleção de produtos afiliados inspirados em Stranger Things — roupas, decoração e colecionáveis.</p>
+    </section>
+
+    <section id="produtos">
+      <div class="filters">
+        <button class="chip active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="roupas">Roupas</button>
+        <button class="chip" data-filter="decor">Decoração</button>
+        <button class="chip" data-filter="colecionaveis">Colecionáveis</button>
+        <button class="chip" data-filter="digital">Digital</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <article class="card" data-cat="roupas">
+          <div class="thumb">
+            <img
+              src="https://down-br.img.susercontent.com/file/sg-11134201-8258s-mg41mhv6m77s17_tn.webp"
+              alt="Camiseta Preta Stranger Things Eleven"
+              loading="lazy">
+          </div>
+          <div class="body">
+            <h3>Camiseta Preta Stranger Things Eleven</h3>
+            <span class="badge">Roupas</span>
+            <p class="meta">Blusa Stranger Things Blusa Estilosa 100% Algodão. Estampa digital DTF com cores vivas e alta durabilidade.</p>
+            <div class="price">R$ 31,90</div>
+            <div class="cta-row">
+              <a class="btn btn-primary outbound" href="https://s.shopee.com.br/8zxPCfcSoD" target="_blank" rel="nofollow noopener">Comprar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Stranger Things Edits Products — Site de afiliados. Os preços mostrados são ilustrativos e podem variar nos parceiros.
+  </footer>
+
+  <script>
+    const chips = document.querySelectorAll('.chip');
+    const grid = document.getElementById('grid');
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        grid.querySelectorAll('.card').forEach(card=>{
+          card.style.display = (filter==='all' || card.dataset.cat===filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
